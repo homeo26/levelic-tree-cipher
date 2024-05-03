@@ -156,7 +156,7 @@ void DFS(vector<vector<int>> adjList, int node = 0) {
 
 }
 
-string levelicTreeEncoder(int numOfNodeChildren, const str &pt) {
+string levelicTreeEncryptor(int numOfNodeChildren, const str &pt) {
 
     fitPt = fitPlainText(numOfNodeChildren, pt);
 
@@ -219,7 +219,7 @@ string BFS(vector<vector<int>> adj, str cipherText) {
     return plainText;
 }
 
-string levelicTreeDecoder(int numOfNodeChildren, str ct) {
+string levelicTreeDecryptor(int numOfNodeChildren, str ct) {
 
     string recoveredPlainText = BFS(recoverDfsPreorder(numOfNodeChildren, ct), ct);
 
@@ -244,8 +244,8 @@ int main() {
     int nodeChildrenCtr = 3; // Ternary Tree
 
     string plainText = "sample text for levelic tree cipher";
-    string cipherText = levelicTreeEncoder(nodeChildrenCtr, plainText);
-    string recoveredPt = levelicTreeDecoder(nodeChildrenCtr, cipherText);
+    string cipherText = levelicTreeEncryptor(nodeChildrenCtr, plainText);
+    string recoveredPt = levelicTreeDecryptor(nodeChildrenCtr, cipherText);
 
     cout << "[Plain Text]: \t\t\t\t" << plainText << endl;
     cout << "[Cipher Text]: \t\t\t\t" << cipherText << endl;

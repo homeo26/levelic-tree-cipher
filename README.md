@@ -17,9 +17,9 @@ So basically this Cipher key = **number of children per node**
 
 ## Code Structure
 
-* Encryption: The plaintext is encoded using the `levelicTreeEncoder` function, which constructs the tree and generates
+* Encryption: The plaintext is encoded using the `levelicTreeEncryptor` function, which constructs the tree and generates
   the ciphertext.
-* Decryption: The ciphertext is decoded using the `levelicTreeDecoder` function, which reconstructs the plaintext from
+* Decryption: The ciphertext is decoded using the `levelicTreeDecryptor` function, which reconstructs the plaintext from
   the output of the DFS result.
 
 ---
@@ -32,12 +32,12 @@ So basically this Cipher key = **number of children per node**
 2. **Encryption**:
     * Specify the number of children per node (nodeChildrenCtr).
     * Provide the plaintext to be encrypted (plainText).
-    * Call the levelicTreeEncoder function to generate the ciphertext.
+    * Call the levelicTreeEncryptor function to generate the ciphertext.
     *
 3. **Decryption**:
     * Use the same number of children per node as in the encryption process.
     * Provide the ciphertext obtained during encryption.
-    * Call the levelicTreeDecoder function to recover the plaintext.
+    * Call the levelicTreeDecryptor function to recover the plaintext.
 
 #### Example:
 
@@ -50,10 +50,10 @@ int nodeChildrenCtr = 3; // Ternary Tree
 string plainText = "sample text for levelic tree cipher";
 
 // Encrypt the plaintext
-string cipherText = levelicTreeEncoder(nodeChildrenCtr, plainText);
+string cipherText = levelicTreeEncryptor(nodeChildrenCtr, plainText);
 
 // Decrypt the ciphertext
-string recoveredPt = levelicTreeDecoder(nodeChildrenCtr, cipherText);
+string recoveredPt = levelicTreeDecryptor(nodeChildrenCtr, cipherText);
 ```
 As the output will be this:
 ```
